@@ -1,2 +1,15 @@
 @import "reset.css";
 /* Styles */
+
+/* Base */
+body {
+    padding: 0 24px;
+}
+.page-wrapper {
+    min-height: 100dvh;
+}
+
+.card {
+    max-height: 300px;
+    max-width: 250px;
+}
