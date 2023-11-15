@@ -4,8 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Coffee Shop</title>
-        <link rel="stylesheet" href="/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="stylesheet" href="./css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./css/styles.css" />
     </head>
     <body>
         <header>
@@ -21,7 +21,11 @@
         <div class="page-wrapper">
             <div class="container">
                 <div class="row">
-                    <div class="menu create-coffee">
+                    <div class="tab menu">
+                        <button class="tablink">Create your own</button>
+                        <button class="tablink">Full menu</button>
+                    </div>
+                    <div class="tab-content create-coffee">
                         <div class="col lt-menu">
                             <div class="accordion-wrapper">
                                 <div class="accordion roast">
@@ -31,31 +35,36 @@
                                         <li>Dark</li>
                                     </ul>
                                 </div>
-                                <div class="accordion milk">
-                                    <ul>
-                                        <li>Whole</li>
-                                        <li>2%</li>
-                                        <li>Skim</li>
-                                        <li>Almond Milk</li>
-                                        <li>Oat Milk</li>
-                                        <li>Coconut Milk</li>
-                                    </ul>
+                                <div class="accordion milk" id="accordion">
+	                                <li onclick="toggleList(this)">MILK
+	                                    <ul>
+	                                        <li>Whole</li>
+	                                        <li>2%</li>
+	                                        <li>Skim</li>
+	                                        <li>Almond Milk</li>
+	                                        <li>Oat Milk</li>
+	                                        <li>Coconut Milk</li>
+                                        </ul>
+	                                </li>
                                 </div>
                                 <div class="accordion sweetener">
-                                    <ul>
-                                        <li>Sugar</li>
-                                        <li>Hazelnut</li>
-                                        <li>Vanilla</li>
-                                        <li>Coconut</li>
-                                        <li>Caramel</li>
-                                    </ul>
+	                                <li onclick="toggleList(this)">SWEETENER
+		                                <ul>
+	                                        <li>Sugar</li>
+	                                        <li>Hazelnut</li>
+	                                        <li>Vanilla</li>
+	                                        <li>Coconut</li>
+	                                        <li>Caramel</li>
+	                                    </ul>
+	                                </li>
                                 </div>
                                 <div class="accordion size">
-                                    <ul>
-                                        <li>Small 8oz</li>
-                                        <li>Medium 12oz</li>
-                                        <li>Large 16oz</li>
-                                    </ul>
+	                                <li onclick="toggleList(this)">SIZE
+		                                <ul>
+	                                        <li>Small 8oz</li>
+	                                        <li>Medium 12oz</li>
+	                                        <li>Large 16oz</li>
+	                                    </ul>
                                 </div>
                             </div>
                             <!-- create coffee -->
@@ -71,7 +80,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="menu show-all-coffee">
+                    <div class="tab-content show-all-coffee">
                         <div class="show-all filter"></div>
                         <div class="show-all grid-view">
                             <div class="show-all-wrapper d-flex">
@@ -84,6 +93,6 @@
                 </div>
             </div>
         </div>
-        <script src="/js/index.js"></script>
+        <script src="./js/index.js"></script>
     </body>
 </html>
