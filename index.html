@@ -8,26 +8,78 @@
         <link rel="stylesheet" href="/css/styles.css" />
     </head>
     <body>
+        <header>
+            <nav class="d-flex align-items-center">
+                <h1>Coffee shop</h1>
+                <ul>
+                    <li>Home</li>
+                    <li>Menu</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </header>
         <div class="page-wrapper">
-            <header>
-                <nav>
-                    <h1>Coffee shop</h1>
-                </nav>
-            </header>
             <div class="container">
                 <div class="row">
-                    <div class="col">
-                        <!-- Start coffee Card -->
-                        <div class="card card-wrapper">
-                            <div class="card card-top">
-                                <h1>Coffee Name</h1>
-                                <div class="card card-body">
-                                    <p>Coffee information</p>
-                                    <p>Coffee price</p>
+                    <div class="menu create-coffee">
+                        <div class="col lt-menu">
+                            <div class="accordion-wrapper">
+                                <div class="accordion roast">
+                                    <ul>
+                                        <li>Light</li>
+                                        <li>Medium</li>
+                                        <li>Dark</li>
+                                    </ul>
+                                </div>
+                                <div class="accordion milk">
+                                    <ul>
+                                        <li>Whole</li>
+                                        <li>2%</li>
+                                        <li>Skim</li>
+                                        <li>Almond Milk</li>
+                                        <li>Oat Milk</li>
+                                        <li>Coconut Milk</li>
+                                    </ul>
+                                </div>
+                                <div class="accordion sweetener">
+                                    <ul>
+                                        <li>Sugar</li>
+                                        <li>Hazelnut</li>
+                                        <li>Vanilla</li>
+                                        <li>Coconut</li>
+                                        <li>Caramel</li>
+                                    </ul>
+                                </div>
+                                <div class="accordion size">
+                                    <ul>
+                                        <li>Small 8oz</li>
+                                        <li>Medium 12oz</li>
+                                        <li>Large 16oz</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- create coffee -->
+                        </div>
+                        <div class="col rt-menu">
+                            <!-- display selections -->
+                            <div class="display-selection-wrapper">
+                                <div>
+                                    <ul>
+                                        <!-- list will render upon selection of coffee items -->
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <!-- End coffee Card -->
+                    </div>
+                    <div class="menu show-all-coffee">
+                        <div class="show-all filter"></div>
+                        <div class="show-all grid-view">
+                            <div class="show-all-wrapper d-flex">
+                                <div class="col-2"></div>
+                                <div class="col-2"></div>
+                                <div class="col-2"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
