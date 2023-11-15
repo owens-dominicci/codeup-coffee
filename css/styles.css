@@ -14,7 +14,7 @@ body {
     max-height: 300px;
     max-width: 250px;
 }
-ul {
+nav ul {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -38,16 +38,17 @@ ul {
     background-color: #ddd;
 }
 
-.accordion ul {
+/* .accordion ul {
     display: none;
     padding-left: 20px;
     list-style: none;
     margin: 0;
-}
+} */
 
 /* Tab items active */
 .display {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 .default {
     display: block;
@@ -77,3 +78,14 @@ nav {
 }
 
 /* Button style */
+
+/* Accordion style */
+.accordion-wrapper {
+    & div {
+        background-color: gray;
+    }
+}
+
+.icon-btn {
+    cursor: pointer;
+}

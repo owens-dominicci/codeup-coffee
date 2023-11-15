@@ -38,50 +38,120 @@
                     </div>
                     <div class="tab-content" data-content="create-coffee">
                         <div class="col lt-menu">
-                            <div class="accordion-wrapper">
-                                <div class="accordion roast">
-                                    <ul>
+                            <!-- start Accordion -->
+                            <div
+                                class="accordion-wrapper d-flex flex-column gap-4"
+                            >
+                                <div
+                                    class="accordion roast"
+                                    data-accordion="accordion-roast"
+                                >
+                                    <div
+                                        class="hide-button d-flex justify-content-between"
+                                    >
+                                        <h2>Roast</h2>
+                                        <div
+                                            class="icon-btn"
+                                            data-icon="accordion-roast"
+                                        >
+                                            <img
+                                                src="./assets/img/mi_remove.svg"
+                                                class="remove-btn"
+                                            />
+                                            <img
+                                                src="/assets/img/mi_add.svg"
+                                                class="add-btn"
+                                            />
+                                        </div>
+                                    </div>
+                                    <ul data-list="accordion-roast">
                                         <li>Light</li>
                                         <li>Medium</li>
                                         <li>Dark</li>
                                     </ul>
                                 </div>
-                                <div class="accordion milk" id="accordion">
-                                    <li onclick="toggleList(this)">
-                                        MILK
-                                        <ul>
-                                            <li>Whole</li>
-                                            <li>2%</li>
-                                            <li>Skim</li>
-                                            <li>Almond Milk</li>
-                                            <li>Oat Milk</li>
-                                            <li>Coconut Milk</li>
-                                        </ul>
-                                    </li>
+                                <div class="accordion milk">
+                                    <div
+                                        class="hide-button d-flex justify-content-between"
+                                    >
+                                        <h2>Milk</h2>
+                                        <div
+                                            class="icon-btn"
+                                            data-icon="accordion-milk"
+                                        >
+                                            <img
+                                                src="./assets/img/mi_remove.svg"
+                                                class="remove-btn"
+                                            />
+                                            <img
+                                                src="/assets/img/mi_add.svg"
+                                                class="add-btn"
+                                            />
+                                        </div>
+                                    </div>
+                                    <ul data-list="accordion-milk">
+                                        <li>Whole</li>
+                                        <li>2%</li>
+                                        <li>Skim</li>
+                                        <li>Almond Milk</li>
+                                        <li>Oat Milk</li>
+                                        <li>Coconut Milk</li>
+                                    </ul>
                                 </div>
                                 <div class="accordion sweetener">
-                                    <li onclick="toggleList(this)">
-                                        SWEETENER
-                                        <ul>
-                                            <li>Sugar</li>
-                                            <li>Hazelnut</li>
-                                            <li>Vanilla</li>
-                                            <li>Coconut</li>
-                                            <li>Caramel</li>
-                                        </ul>
-                                    </li>
+                                    <div
+                                        class="hide-button d-flex justify-content-between"
+                                    >
+                                        <h2>sweetener</h2>
+                                        <div
+                                            class="icon-btn"
+                                            data-icon="accordion-sweetener"
+                                        >
+                                            <img
+                                                src="./assets/img/mi_remove.svg"
+                                                class="remove-btn"
+                                            />
+                                            <img
+                                                src="/assets/img/mi_add.svg"
+                                                class="add-btn"
+                                            />
+                                        </div>
+                                    </div>
+                                    <ul data-list="accordion-sweetener">
+                                        <li>Sugar</li>
+                                        <li>Hazelnut</li>
+                                        <li>Vanilla</li>
+                                        <li>Coconut</li>
+                                        <li>Caramel</li>
+                                    </ul>
                                 </div>
                                 <div class="accordion size">
-                                    <li onclick="toggleList(this)">
-                                        SIZE
-                                        <ul>
-                                            <li>Small 8oz</li>
-                                            <li>Medium 12oz</li>
-                                            <li>Large 16oz</li>
-                                        </ul>
-                                    </li>
+                                    <div
+                                        class="hide-button d-flex justify-content-between"
+                                    >
+                                        <h2>Size</h2>
+                                        <div
+                                            class="icon-btn"
+                                            data-icon="accordion-size"
+                                        >
+                                            <img
+                                                src="./assets/img/mi_remove.svg"
+                                                class="remove-btn"
+                                            />
+                                            <img
+                                                src="/assets/img/mi_add.svg"
+                                                class="add-btn"
+                                            />
+                                        </div>
+                                    </div>
+                                    <ul data-list="accordion-size">
+                                        <li>Small 8oz</li>
+                                        <li>Medium 12oz</li>
+                                        <li>Large 16oz</li>
+                                    </ul>
                                 </div>
                             </div>
+                            <!-- end Accordion -->
                             <!-- create coffee -->
                         </div>
                         <div class="col rt-menu">
