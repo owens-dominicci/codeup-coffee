@@ -59,6 +59,18 @@ ul {
 .active {
     border: 1px solid rgb(128, 128, 128);
 }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Push the search bar to the right */
+}
 
-
+.search-bar input {
+    margin-right: 10px; /* Add some space between input and button */
+}
