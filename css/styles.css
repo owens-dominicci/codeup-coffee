@@ -19,3 +19,16 @@ ul {
     flex-direction: row;
     gap: 20px;
 }
+
+/* Tab items active */
+.display {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    border: 1px solid gray;
+}

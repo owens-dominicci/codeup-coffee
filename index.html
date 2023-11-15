@@ -22,10 +22,12 @@
             <div class="container">
                 <div class="row">
                     <div class="tab menu">
-                        <button class="tablink">Create your own</button>
-                        <button class="tablink">Full menu</button>
+                        <button class="tablink default" data-tab>
+                            Create your own
+                        </button>
+                        <button class="tablink" data-tab>Full menu</button>
                     </div>
-                    <div class="tab-content create-coffee">
+                    <div class="tab-content default" id="create-coffee">
                         <div class="col lt-menu">
                             <div class="accordion-wrapper">
                                 <div class="accordion roast">
@@ -75,7 +77,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-content show-all-coffee">
+                    <div class="tab-content" id="show-all-coffee">
                         <div class="show-all filter"></div>
                         <div class="show-all grid-view">
                             <div class="show-all-wrapper d-flex">
@@ -89,5 +91,6 @@
             </div>
         </div>
         <script src="/js/index.js"></script>
+        <script src="/js/accordian.js"></script>
     </body>
 </html>
