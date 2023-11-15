@@ -38,13 +38,6 @@ nav ul {
     background-color: #ddd;
 }
 
-/* .accordion ul {
-    display: none;
-    padding-left: 20px;
-    list-style: none;
-    margin: 0;
-} */
-
 /* Tab items active */
 .display {
     display: flex;
@@ -83,6 +76,12 @@ nav {
 .accordion-wrapper {
     & div {
         background-color: gray;
+        align-items: center;
+        gap: 12px;
+    }
+    & img {
+        width: 25px;
+        height: 25px;
     }
 }
 

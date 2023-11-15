@@ -1,269 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>Coffee Shop</title>
-	<link rel="stylesheet" href="./css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="./css/styles.css"/>
-</head>
-<body>
-<header>
-	<nav class="d-flex align-items-center">
-		<h1>Coffee shop</h1>
-		<ul>
-			<li>Home</li>
-			<li>Menu</li>
-			<li>Contact</li>
-		</ul>
-		<div class="search-bar">
-			<input type="text" placeholder="Search..."/>
-			<button type="button">Search</button>
-		</div>
-	</nav>
-</header>
-<div class="page-wrapper">
-	<div class="container">
-		<div class="row">
-			<div class="tab menu d-flex">
-				<button
-						class="tablink default"
-						data-tab="create-coffee"
-				>
-					Create your own
-				</button>
-				<button class="tablink" data-tab="show-coffee">
-					Full menu
-				</button>
-			</div>
-			<div class="tab-content" data-content="create-coffee">
-				<div class="col lt-menu">
-					<!-- start Accordion -->
-					<div
-							class="accordion-wrapper d-flex flex-column gap-4"
-					>
-						<div
-								class="accordion roast"
-								data-accordion="accordion-roast"
-						>
-							<div
-									class="hide-button d-flex justify-content-between"
-							>
-								<h2>Roast</h2>
-								<div
-										class="icon-btn"
-										data-icon="accordion-roast"
-								>
-									<img
-											src="./assets/img/mi_remove.svg"
-											class="remove-btn"
-									/>
-									<img
-											src="./assets/img/mi_add.svg"
-											class="add-btn"
-									/>
-								</div>
-							</div>
-							<ul data-list="accordion-roast">
-								<li>
-									<form action="">
-										<input type="checkbox" name="roast" id="light"/>
-										<label for="light">Light</label>
-									</form>
-								</li>
-								<li>
-									<form action="">
-										<input type="checkbox" name="roast" id="medium"/>
-										<label for="medium">Medium</label>
-									</form>
-								</li>
-								<li>
-									<form action="">
-										<input type="checkbox" name="roast" id="dark"/>
-										<label for="dark">Dark</label>
-									</form>
-								</li>
-							</ul>
-						</div>
-						<div class="accordion milk">
-							<div
-									class="hide-button d-flex justify-content-between"
-							>
-								<h2>Milk</h2>
-								<div
-										class="icon-btn"
-										data-icon="accordion-milk"
-								>
-									<img
-											src="./assets/img/mi_remove.svg"
-											class="remove-btn"
-									/>
-									<img
-											src="/assets/img/mi_add.svg"
-											class="add-btn"
-									/>
-								</div>
-							</div>
-							<ul data-list="accordion-milk">
-								<li>
-									<form action="">
-										<input type="checkbox" name="roast" id="whole"/>
-										<label for="whole">Whole</label>
-									</form>
-								</li>
-								<li>
-									<form action="">
-										<input type="checkbox" name="roast" id="2%"/>
-										<label for="2%">2%</label>
-									</form>
-								</li>
-								<li>
-									<form action="">
-										<input type="checkbox" name="roast" id="skim"/>
-										<label for="skim">Skim</label>
-									</form>
-								</li>
-								<li>
-									<form action="">
-										<input type="checkbox" name="roast" id="almond milk"/>
-										<label for="almond milk">Almond Milk</label>
-									</form>
-								</li>
-								<li>
-									<form action="">
-										<input type="checkbox" name="roast" id="oat milk"/>
-										<label for="oat milk">Oat Milk</label>
-									</form>
-								</li>
-								<li>
-									<form action="">
-										<input type="checkbox" name="roast" id="coconut milk"/>
-										<label for="coconut milk">Coconut Milk</label>
-									</form>
-								</li>
-							</ul>
-						</div>
-						<div class="accordion sweetener">
-							<div
-									class="hide-button d-flex justify-content-between"
-							>
-								<h2>sweetener</h2>
-								<div
-										class="icon-btn"
-										data-icon="accordion-sweetener"
-								>
-									<img
-											src="./assets/img/mi_remove.svg"
-											class="remove-btn"
-									/>
-									<img
-											src="./assets/img/mi_add.svg"
-											class="add-btn"
-									/>
-								</div>
-							</div>
-							<ul data-list="accordion-sweetener">
-								<li>
-									<form action="">
-										<input type="checkbox" name="roast" id="sugar"/>
-										<label for="sugar">Sugar</label>
-									</form>
-								</li>
-								<li>
-									<form action="">
-										<input type="checkbox" name="roast" id="hazelnut"/>
-										<label for="hazelnut">Hazelnut</label>
-									</form>
-								</li>
-								<li>
-									<form action="">
-										<input type="checkbox" name="roast" id="vanilla"/>
-										<label for="vanilla">Vanilla</label>
-									</form>
-								</li>
-								<li>
-									<form action="">
-										<input type="checkbox" name="roast" id="coconut"/>
-										<label for="coconut">Coconut</label>
-									</form>
-								</li>
-								<li>
-									<form action="">
-										<input type="checkbox" name="roast" id="caramel"/>
-										<label for="caramel">Caramel</label>
-									</form>
-								</li>
-							</ul>
-						</div>
-						<div class="accordion size">
-							<div
-									class="hide-button d-flex justify-content-between"
-							>
-								<h2>Size</h2>
-								<div
-										class="icon-btn"
-										data-icon="accordion-size"
-								>
-									<img
-											src="./assets/img/mi_remove.svg"
-											class="remove-btn"
-									/>
-									<img
-											src="/assets/img/mi_add.svg"
-											class="add-btn"
-									/>
-								</div>
-							</div>
-							<ul data-list="accordion-size">
-								<li>
-									<form action="">
-										<input type="checkbox" name="roast" id="small"/>
-										<label for="small">Small 8oz</label>
-									</form>
-								</li>
-								<li>
-									<form action="">
-										<input type="checkbox" name="roast" id="medium"/>
-										<label for="medium">Medium 12oz</label>
-									</form>
-								</li>
-								<li>
-									<form action="">
-										<input type="checkbox" name="roast" id="large"/>
-										<label for="large">Large 16oz</label>
-									</form>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<!-- end Accordion -->
-					<!-- create coffee -->
-				</div>
-				<div class="col rt-menu">
-					<!-- display selections -->
-					<div class="display-selection-wrapper">
-						<div>
-							<ul>
-								<!-- list will render upon selection of coffee items -->
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="tab-content" data-content="show-coffee">
-				<div class="show-all filter"></div>
-				<div class="show-all grid-view">
-					<div class="show-all-wrapper d-flex">
-						<div class="col-2"></div>
-						<div class="col-2"></div>
-						<div class="col-2"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<script src="./js/index.js"></script>
-<script src="./js/tabs.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Coffee Shop</title>
+        <link rel="stylesheet" href="./css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./css/styles.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="d-flex align-items-center">
+                <h1>Coffee shop</h1>
+                <ul>
+                    <li>Home</li>
+                    <li>Menu</li>
+                    <li>Contact</li>
+                </ul>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." />
+                    <button type="button">Search</button>
+                </div>
+            </nav>
+        </header>
+        <div class="page-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="tab menu d-flex">
+                        <button
+                            class="tablink default"
+                            data-tab="create-coffee"
+                        >
+                            Create your own
+                        </button>
+                        <button class="tablink" data-tab="show-coffee">
+                            Full menu
+                        </button>
+                    </div>
+                    <div class="tab-content" data-content="create-coffee">
+                        <div class="col lt-menu">
+                            <!-- start Accordion -->
+                            <div
+                                class="accordion-wrapper d-flex flex-column gap-4"
+                            >
+                                <div class="accordion roast">
+                                    <div
+                                        class="hide-button d-flex justify-content-between"
+                                    >
+                                        <div
+                                            class="icon-btn d-flex align-items-center"
+                                            data-icon="accordion-roast"
+                                        >
+                                            <h2>Roast</h2>
+                                            <img
+                                                src="./assets/img/mi_remove.svg"
+                                                class="remove-btn"
+                                            />
+                                            <img
+                                                src="./assets/img/mi_add.svg"
+                                                class="add-btn"
+                                            />
+                                        </div>
+                                    </div>
+                                    <ul data-list="accordion-roast">
+                                        <li>
+                                            <form action="">
+                                                <input
+                                                    type="checkbox"
+                                                    name="roast"
+                                                    id="light"
+                                                />
+                                                <label for="light">Light</label>
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form action="">
+                                                <input
+                                                    type="checkbox"
+                                                    name="roast"
+                                                    id="medium"
+                                                />
+                                                <label for="medium"
+                                                    >Medium</label
+                                                >
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form action="">
+                                                <input
+                                                    type="checkbox"
+                                                    name="roast"
+                                                    id="dark"
+                                                />
+                                                <label for="dark">Dark</label>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="accordion milk">
+                                    <div
+                                        class="hide-button d-flex justify-content-between"
+                                    >
+                                        <div
+                                            class="icon-btn d-flex align-items-center"
+                                            data-icon="accordion-milk"
+                                        >
+                                            <h2>Milk</h2>
+                                            <img
+                                                src="./assets/img/mi_remove.svg"
+                                                class="remove-btn"
+                                            />
+                                            <img
+                                                src="/assets/img/mi_add.svg"
+                                                class="add-btn"
+                                            />
+                                        </div>
+                                    </div>
+                                    <ul data-list="accordion-milk">
+                                        <li>
+                                            <form action="">
+                                                <input
+                                                    type="checkbox"
+                                                    name="roast"
+                                                    id="whole"
+                                                />
+                                                <label for="whole">Whole</label>
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form action="">
+                                                <input
+                                                    type="checkbox"
+                                                    name="roast"
+                                                    id="2%"
+                                                />
+                                                <label for="2%">2%</label>
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form action="">
+                                                <input
+                                                    type="checkbox"
+                                                    name="roast"
+                                                    id="skim"
+                                                />
+                                                <label for="skim">Skim</label>
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form action="">
+                                                <input
+                                                    type="checkbox"
+                                                    name="roast"
+                                                    id="almond milk"
+                                                />
+                                                <label for="almond milk"
+                                                    >Almond Milk</label
+                                                >
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form action="">
+                                                <input
+                                                    type="checkbox"
+                                                    name="roast"
+                                                    id="oat milk"
+                                                />
+                                                <label for="oat milk"
+                                                    >Oat Milk</label
+                                                >
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form action="">
+                                                <input
+                                                    type="checkbox"
+                                                    name="roast"
+                                                    id="coconut milk"
+                                                />
+                                                <label for="coconut milk"
+                                                    >Coconut Milk</label
+                                                >
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="accordion sweetener">
+                                    <div
+                                        class="hide-button d-flex justify-content-between"
+                                    >
+                                        <div
+                                            class="icon-btn d-flex align-items-center"
+                                            data-icon="accordion-sweetener"
+                                        >
+                                            <h2>sweetener</h2>
+                                            <img
+                                                src="./assets/img/mi_remove.svg"
+                                                class="remove-btn"
+                                            />
+                                            <img
+                                                src="./assets/img/mi_add.svg"
+                                                class="add-btn"
+                                            />
+                                        </div>
+                                    </div>
+                                    <ul data-list="accordion-sweetener">
+                                        <li>
+                                            <form action="">
+                                                <input
+                                                    type="checkbox"
+                                                    name="roast"
+                                                    id="sugar"
+                                                />
+                                                <label for="sugar">Sugar</label>
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form action="">
+                                                <input
+                                                    type="checkbox"
+                                                    name="roast"
+                                                    id="hazelnut"
+                                                />
+                                                <label for="hazelnut"
+                                                    >Hazelnut</label
+                                                >
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form action="">
+                                                <input
+                                                    type="checkbox"
+                                                    name="roast"
+                                                    id="vanilla"
+                                                />
+                                                <label for="vanilla"
+                                                    >Vanilla</label
+                                                >
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form action="">
+                                                <input
+                                                    type="checkbox"
+                                                    name="roast"
+                                                    id="coconut"
+                                                />
+                                                <label for="coconut"
+                                                    >Coconut</label
+                                                >
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form action="">
+                                                <input
+                                                    type="checkbox"
+                                                    name="roast"
+                                                    id="caramel"
+                                                />
+                                                <label for="caramel"
+                                                    >Caramel</label
+                                                >
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="accordion size">
+                                    <div
+                                        class="hide-button d-flex justify-content-between"
+                                    >
+                                        <div
+                                            class="icon-btn d-flex align-items-center"
+                                            data-icon="accordion-size"
+                                        >
+                                            <h2>Size</h2>
+                                            <img
+                                                src="./assets/img/mi_remove.svg"
+                                                class="remove-btn"
+                                            />
+                                            <img
+                                                src="/assets/img/mi_add.svg"
+                                                class="add-btn"
+                                            />
+                                        </div>
+                                    </div>
+                                    <ul data-list="accordion-size">
+                                        <li>
+                                            <form action="">
+                                                <input
+                                                    type="checkbox"
+                                                    name="roast"
+                                                    id="small"
+                                                />
+                                                <label for="small"
+                                                    >Small 8oz</label
+                                                >
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form action="">
+                                                <input
+                                                    type="checkbox"
+                                                    name="roast"
+                                                    id="medium"
+                                                />
+                                                <label for="medium"
+                                                    >Medium 12oz</label
+                                                >
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form action="">
+                                                <input
+                                                    type="checkbox"
+                                                    name="roast"
+                                                    id="large"
+                                                />
+                                                <label for="large"
+                                                    >Large 16oz</label
+                                                >
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- end Accordion -->
+                            <!-- create coffee -->
+                        </div>
+                        <div class="col rt-menu">
+                            <!-- display selections -->
+                            <div class="display-selection-wrapper">
+                                <div>
+                                    <ul>
+                                        <!-- list will render upon selection of coffee items -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" data-content="show-coffee">
+                        <div class="show-all filter"></div>
+                        <div class="show-all grid-view">
+                            <div class="show-all-wrapper d-flex">
+                                <div class="col-2"></div>
+                                <div class="col-2"></div>
+                                <div class="col-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./js/index.js"></script>
+        <script src="./js/tabs.js"></script>
+    </body>
 </html>
