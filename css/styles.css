@@ -48,6 +48,9 @@ ul {
 .display {
     display: block;
 }
+.default {
+    display: block;
+}
 
 .hidden {
     display: none;

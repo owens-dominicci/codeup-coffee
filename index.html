@@ -22,12 +22,17 @@
             <div class="container">
                 <div class="row">
                     <div class="tab menu">
-                        <button class="tablink default" data-tab>
+                        <button
+                            class="tablink default"
+                            data-tab="create-coffee"
+                        >
                             Create your own
                         </button>
-                        <button class="tablink" data-tab>Full menu</button>
+                        <button class="tablink" data-tab="show-coffee">
+                            Full menu
+                        </button>
                     </div>
-                    <div class="tab-content" id="create-coffee">
+                    <div class="tab-content" data-content="create-coffee">
                         <div class="col lt-menu">
                             <div class="accordion-wrapper">
                                 <div class="accordion roast">
@@ -86,7 +91,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-content" id="show-coffee">
+                    <div class="tab-content" data-content="show-coffee">
                         <div class="show-all filter"></div>
                         <div class="show-all grid-view">
                             <div class="show-all-wrapper d-flex">
@@ -99,6 +104,8 @@
                 </div>
             </div>
         </div>
+        <script type="module" src="./js/data.js"></script>
         <script src="./js/index.js"></script>
+        <script src="./js/tabs.js"></script>
     </body>
 </html>
