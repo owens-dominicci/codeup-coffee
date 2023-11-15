@@ -1,4 +1,4 @@
-export const coffees = [
+const coffees = [
     { id: 1, name: "Espresso", roastType: "Dark" },
     { id: 2, name: "Americano", roastType: "Medium" },
     { id: 3, name: "Cappuccino", roastType: "Medium" },

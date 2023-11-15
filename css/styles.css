@@ -4,6 +4,7 @@
 /* Base */
 body {
     padding: 0 50px;
+    background-color: #e6d5b8;
 }
 .page-wrapper {
     min-height: 100dvh;
@@ -74,3 +75,5 @@ nav {
 .search-bar input {
     margin-right: 10px; /* Add some space between input and button */
 }
+
+/* Button style */
