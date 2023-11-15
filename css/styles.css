@@ -43,3 +43,16 @@ ul {
     list-style: none;
     margin: 0;
 }
+
+/* Tab items active */
+.display {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    border: 1px solid gray;
+}
