@@ -27,10 +27,12 @@ const createCoffee = () => {};
 const renderCoffee = () => {};
 const updateCoffee = () => {};
 const selectCoffee = () => {
-    const form = document.querySelectorAll("form[data-roast='selection']");
-    console.log(form);
-    form.forEach((form) => {
-        const userSel = form.querySelector("input[name='roast']");
+    const roastOptions = document.querySelectorAll(
+        "form[data-roast='selection']"
+    );
+    console.log(roastOptions);
+    roastOptions.forEach((roast) => {
+        const userSel = roast.querySelector("input[name='roast']");
         userSel.addEventListener("change", (e) => {
             console.log(e.target.value);
         });
