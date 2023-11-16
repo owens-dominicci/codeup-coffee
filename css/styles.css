@@ -2,13 +2,16 @@
 /* Styles */
 
 /* Base */
+
 body {
     padding: 0 50px;
     background-color: #e6d5b8;
 }
+
 .page-wrapper {
     min-height: 100dvh;
 }
+
 .container {
     background-image: url("");
     background-position: center;
@@ -23,7 +26,7 @@ button {
 /*items active */
 .display {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 .default {
     display: block;
@@ -93,7 +96,6 @@ nav ul {
     width: 100%;
     margin: 0 auto;
 }
-
 .accordion li {
     padding: 10px;
     margin-bottom: 5px;
@@ -157,9 +159,9 @@ nav ul {
     align-items: center;
 }
 
-input[type="radio"] {
+/* input[type="radio"] {
     display: none;
-}
+} */
 
 .milk-label:hover {
     cursor: pointer;
