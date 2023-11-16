@@ -9,15 +9,12 @@ const toggleList = () => {
 
         removeBtn.classList.add("hidden");
         addBtn.classList.add("display");
-        accordionItem.classList.add("hidden"); // Initially hide all accordion items
+        accordionItem.classList.add("default"); // Initially hide all accordion items
 
         accordionBtn.addEventListener("click", (e) => {
             e.stopPropagation(); // Prevent unnecessary event bubbling
 
-            // Toggle visibility of accordion item
-            // const isHidden = accordionItem.classList.contains("hidden");
-
-            accordionItem.classList.toggle("hidden");
+            accordionItem.classList.toggle("default");
             accordionItem.classList.toggle("display");
 
             removeBtn.classList.toggle("hidden");
