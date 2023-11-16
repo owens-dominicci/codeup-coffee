@@ -86,19 +86,13 @@ nav ul {
 .accordion {
     list-style: none;
     padding: 0;
-    width: 200px;
+    width: 100%;
     margin: 0 auto;
 }
 
 .accordion li {
-    background-color: #f4f4f4;
     padding: 10px;
     margin-bottom: 5px;
-    cursor: pointer;
-}
-
-.accordion li:hover {
-    background-color: #ddd;
 }
 
 .accordion-content {
@@ -114,15 +108,38 @@ nav ul {
     padding-left: 10px;
     padding-right: 10px;
 }
-/* Boxes */
-.box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100px;
-    width: 100px;
-    background-color: grey;
-    border-radius: 8px;
-    font-weight: 800;
-    color: #fff;
+
+.light-roast {
+    background-image: url("../assets/img/coffee-light.png");
+}
+
+.roast-label {
+    display: inline-block;
+    width: 100px; /* Set the size of your images */
+    height: 100px; /* Set the size of your images */
+    background-size: cover;
+    background-position: center;
+    margin-right: 10px; /* Adjust spacing between images */
+    color: white;
+}
+
+.roast-label:hover {
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.roast-label:nth-of-type(1) {
+    background-image: url("/assets/img/coffee-light.png");
+}
+.roast-label:nth-of-type(2) {
+    background-image: url("/assets/img/coffee-medium.png");
+}
+.roast-label:nth-of-type(3) {
+    background-image: url("/assets/img/coffee-dark.png");
+}
+
+/* Style when the radio button is checked */
+input[type="radio"]:checked + .roast-label {
+    /* Add any visual indication for the selected image */
+    border: 2px solid blue; /* For example, a border */
 }

@@ -22,30 +22,40 @@ const toggleList = () => {
         });
     });
 };
+
+const options = {
+    roast: ["light", "medium", "dark"],
+    milk: ["whole", "2%", "skim", "almond", "oat", "soy"],
+    sweetener: ["sugar", "hazelnut", "coconut", "vanilla", "caramel"],
+    size: ["small", "medium", "large"],
+};
+
 // renderBox function
-const renderBox = () => {
-	const box = document.createElement("label");
-	box.classList.add("box");
-	const boxContainer = document.querySelector("#box");
-	boxContainer.appendChild(box);
-}
+// const renderAccordionItems = () => {
+//     for (let option in options) {
+//         const accordionSelection = document.createElement("div");
+//         accordionSelection.classList.add(`accordion ${option}`);
+//     }
+//     const boxContainer = document.querySelector("#roast-sel");
+//     boxContainer.appendChild(box);
+// };
 
 // Call renderBox when needed
-
 // For example, to add a box every time the page loads:
-document.addEventListener('DOMContentLoaded', function () {
-	renderBox();
-});
-
+// document.addEventListener("DOMContentLoaded", function () {
+//     renderBox();
+// });
 
 const createCoffee = () => {};
 const renderCoffee = () => {};
 const updateCoffee = () => {};
 const selectCoffee = () => {
-    const form = document.querySelectorAll("form[data-roast='selection']");
-    console.log(form);
-    form.forEach((form) => {
-        const userSel = form.querySelector("input[name='roast']");
+    const roastOptions = document.querySelectorAll(
+        "form[data-roast='selection']"
+    );
+    console.log(roastOptions);
+    roastOptions.forEach((roast) => {
+        const userSel = roast.querySelector("input[name='roast']");
         userSel.addEventListener("change", (e) => {
             console.log(e.target.value);
         });
@@ -53,7 +63,6 @@ const selectCoffee = () => {
 };
 //MAIN
 (() => {
-	toggleList();
-	selectCoffee();
+    toggleList();
+    selectCoffee();
 })();
-
