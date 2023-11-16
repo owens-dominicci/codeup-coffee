@@ -26,8 +26,15 @@ const toggleList = () => {
 const createCoffee = () => {};
 const renderCoffee = () => {};
 const updateCoffee = () => {};
-
+const selectCoffee = () => {
+    const form = document.querySelectorAll("form[data-roast='selection']");
+    console.log(form);
+    form.forEach((form) => {
+        const userSel = form.querySelector("input[name='roast']");
+    });
+};
 //MAIN
 (() => {
     toggleList();
+    selectCoffee();
 })();
