@@ -22,6 +22,20 @@ const toggleList = () => {
         });
     });
 };
+// renderBox function
+const renderBox = () => {
+	const box = document.createElement("div");
+	box.classList.add("box");
+	const boxContainer = document.querySelector("#boxes");
+	boxContainer.appendChild(box);
+}
+
+// Call renderBox when needed
+// For example, to add a box every time the page loads:
+document.addEventListener('DOMContentLoaded', function () {
+	renderBox();
+});
+
 
 const createCoffee = () => {};
 const renderCoffee = () => {};
@@ -41,5 +55,9 @@ const selectCoffee = () => {
 //MAIN
 (() => {
     toggleList();
+<<<<<<< HEAD
+
+=======
     selectCoffee();
+>>>>>>> 1f94e26052e309b9dac5e33e6cfbd373679bfcae
 })();
