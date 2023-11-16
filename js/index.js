@@ -30,39 +30,65 @@ const options = {
     size: ["small", "medium", "large"],
 };
 
-// renderBox function
-// const renderAccordionItems = () => {
-//     for (let option in options) {
-//         const accordionSelection = document.createElement("div");
-//         accordionSelection.classList.add(`accordion ${option}`);
-//     }
-//     const boxContainer = document.querySelector("#roast-sel");
-//     boxContainer.appendChild(box);
-// };
+const populateSelect = () => {
+    const select = document.getElementById("keySelect");
 
-// Call renderBox when needed
-// For example, to add a box every time the page loads:
-// document.addEventListener("DOMContentLoaded", function () {
-//     renderBox();
-// });
+    for (let key in options) {
+        const option = document.createElement("option");
+        option.value = key;
+        option.textContent = key;
+        select.appendChild(option);
+    }
+};
+
+const addToOptions = () => {
+    const keyToAdd = document.getElementById("keySelect").value;
+    const valueToAdd = document.getElementById("valueInput").value;
+
+    if (valueToAdd.trim() !== "") {
+        if (options.hasOwnProperty(keyToAdd)) {
+            options[keyToAdd].push(valueToAdd);
+        } else {
+            options[keyToAdd] = [valueToAdd];
+        }
+
+        console.log(options); // Display the updated options object
+    } else {
+        alert("Please enter a value to add.");
+    }
+};
 
 const createCoffee = () => {};
 const renderCoffee = () => {};
 const updateCoffee = () => {};
-const selectCoffee = () => {
+
+const selectCoffee = (callback) => {
+    let userSelection = {
+        category: "option",
+    };
     const roastOptions = document.querySelectorAll(
-        "form[data-roast='selection']"
+        "form[data-select='selection']"
     );
     console.log(roastOptions);
     roastOptions.forEach((roast) => {
-        const userSel = roast.querySelector("input[name='roast']");
-        userSel.addEventListener("change", (e) => {
-            console.log(e.target.value);
-        });
+        const userSel = roast.querySelectorAll("input[name='options']");
+        for (let selection of userSel) {
+            selection.addEventListener("change", (e) => {
+                // console.log(e.target.value);
+                userSelection = { roast: e.target.value };
+                if (callback && typeof callback === "function") {
+                    callback(userSelection); // Pass the updated selection to the callback
+                }
+            });
+        }
     });
+    return userSelection;
 };
 //MAIN
 (() => {
     toggleList();
-    selectCoffee();
+    selectCoffee((updatedSelection) => {
+        console.log(updatedSelection);
+    });
+    populateSelect();
 })();

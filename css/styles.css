@@ -37,6 +37,10 @@ button {
     border: 1px solid rgb(128, 128, 128);
 }
 
+.selected {
+    border: 3px solid #755139;
+}
+
 .search-bar {
     display: flex;
     align-items: center;
@@ -114,7 +118,10 @@ nav ul {
 }
 
 .roast-label {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
     width: 100px; /* Set the size of your images */
     height: 100px; /* Set the size of your images */
     background-size: cover;
@@ -125,7 +132,7 @@ nav ul {
 
 .roast-label:hover {
     cursor: pointer;
-    border: 2px solid white;
+    border: 3px solid #755139;
 }
 
 .roast-label:nth-of-type(1) {
@@ -138,13 +145,20 @@ nav ul {
     background-image: url("/assets/img/coffee-dark.png");
 }
 .milk-label {
-    display: inline-block;
+    display: flex;
     width: 100px; /* Set the size of your images */
     height: 100px; /* Set the size of your images */
     background-size: cover;
     background-position: center;
     margin-right: 10px; /* Adjust spacing between images */
-    color: white;
+    background-color: white;
+    color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="radio"] {
+    display: none;
 }
 
 .milk-label:hover {
