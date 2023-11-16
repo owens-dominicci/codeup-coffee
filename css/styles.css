@@ -69,7 +69,7 @@ nav ul {
 /* Accordion style */
 .accordion-wrapper {
     & div {
-        background-color: gray;
+        background-color: transparent;
         align-items: center;
         gap: 12px;
     }
