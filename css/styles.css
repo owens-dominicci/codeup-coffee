@@ -109,3 +109,8 @@ nav ul {
 .accordion-content.display {
     max-height: 500px; /* Set an appropriate value for max-height */
 }
+
+.hide-button {
+    padding-left: 10px;
+    padding-right: 10px;
+}

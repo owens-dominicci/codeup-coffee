@@ -40,9 +40,22 @@ document.addEventListener('DOMContentLoaded', function () {
 const createCoffee = () => {};
 const renderCoffee = () => {};
 const updateCoffee = () => {};
-
+const selectCoffee = () => {
+    const form = document.querySelectorAll("form[data-roast='selection']");
+    console.log(form);
+    form.forEach((form) => {
+        const userSel = form.querySelector("input[name='roast']");
+        userSel.addEventListener("change", (e) => {
+            console.log(e.target.value);
+        });
+    });
+};
 //MAIN
 (() => {
     toggleList();
+<<<<<<< HEAD
 
+=======
+    selectCoffee();
+>>>>>>> 1f94e26052e309b9dac5e33e6cfbd373679bfcae
 })();
