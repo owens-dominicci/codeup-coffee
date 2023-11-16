@@ -26,7 +26,7 @@ const toggleList = () => {
 const renderBox = () => {
 	const box = document.createElement("div");
 	box.classList.add("box");
-	const boxContainer = document.querySelector("#boxes");
+	const boxContainer = document.querySelector("#box");
 	boxContainer.appendChild(box);
 }
 
@@ -53,9 +53,5 @@ const selectCoffee = () => {
 //MAIN
 (() => {
     toggleList();
-<<<<<<< HEAD
-
-=======
     selectCoffee();
->>>>>>> 1f94e26052e309b9dac5e33e6cfbd373679bfcae
 })();
