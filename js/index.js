@@ -31,6 +31,9 @@ const selectCoffee = () => {
     console.log(form);
     form.forEach((form) => {
         const userSel = form.querySelector("input[name='roast']");
+        userSel.addEventListener("change", (e) => {
+            console.log(e.target.value);
+        });
     });
 };
 //MAIN
