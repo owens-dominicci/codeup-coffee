@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -121,7 +121,7 @@
                                                 class="remove-btn"
                                             />
                                             <img
-                                                src="/assets/img/mi_add.svg"
+                                                src="./assets/img/mi_add.svg"
                                                 class="add-btn"
                                             />
                                         </div>
@@ -134,84 +134,126 @@
                                             <form
                                                 name="milk"
                                                 data-milk="selection"
+                                                id="milk-sel"
+                                                class="d-flex"
                                             >
-                                                <input
+	                                            <label
+		                                            class="milk-label"
+		                                            for="whole"
+		                                        >whole
+		                                            <input
                                                     type="radio"
                                                     name="milk"
                                                     value="whole"
-                                                />
-                                                <label for="whole">Whole</label>
+                                                    class="whole-milk"
+                                                    id="whole"
+                                                    />
+	                                            </label>
                                             </form>
                                         </li>
                                         <li>
                                             <form
                                                 name="milk"
                                                 data-milk="selection"
+                                                id="milk-sel"
+                                                class="d-flex"
                                             >
+	                                            <label
+		                                            class="milk-label"
+		                                            for="2%"
+	                                            >2%
                                                 <input
                                                     type="radio"
                                                     name="milk"
                                                     value="2%"
+                                                    class="2%-milk"
+                                                    id="2%"
                                                 />
-                                                <label for="2%">2%</label>
+	                                            </label>
                                             </form>
                                         </li>
                                         <li>
                                             <form
-                                                name="roast"
+                                                name="milk"
                                                 data-milk="selection"
+                                                id="milk-sel"
+                                                class="d-flex"
                                             >
+	                                            <label
+		                                            class="milk-label"
+		                                            for="skim"
+		                                        >Skim
                                                 <input
                                                     type="radio"
                                                     name="milk"
                                                     value="skim"
+                                                    class="skim-milk"
+                                                    id="skim"
                                                 />
-                                                <label for="skim">Skim</label>
+                                                </label>
                                             </form>
                                         </li>
                                         <li>
                                             <form
                                                 name="milk"
                                                 data-milk="selection"
+                                                id="milk-sel"
+                                                class="d-flex"
                                             >
+	                                            <label
+		                                            class="milk-label"
+		                                            for="almond"
+		                                        >Almond Milk
                                                 <input
                                                     type="radio"
                                                     name="milk"
                                                     value="almond"
+                                                    class="almond-milk"
+                                                    id="almond"
                                                 />
-                                                <label for="almond milk"
-                                                    >Almond Milk</label
-                                                >
+	                                            </label>
                                             </form>
                                         </li>
                                         <li>
                                             <form
                                                 name="milk"
                                                 data-milk="selection"
+                                                id="milk-sel"
+                                                class="d-flex"
                                             >
-                                                <input
-                                                    type="radio"
-                                                    name="milk"
-                                                    value="oat"
-                                                />
-                                                <label for="oat milk"
-                                                    >Oat Milk</label
-                                                >
+	                                            <label
+		                                            class="milk-label"
+		                                            for="oat"
+		                                        >Oat Milk
+	                                                <input
+	                                                    type="radio"
+	                                                    name="milk"
+	                                                    value="oat"
+	                                                    class="oat-milk"
+	                                                    id="oat"
+	                                                />
+	                                            </label>
                                             </form>
                                         </li>
                                         <li>
                                             <form
                                                 name="milk"
                                                 data-milk="selection"
+                                                id="milk-sel"
+                                                class="d-flex"
                                             >
+	                                            <label
+		                                            class="milk-label"
+		                                            for="coconut"
+		                                        >Coconut Milk
                                                 <input
                                                     type="radio"
                                                     name="milk"
                                                     value="coconut"
+                                                    class="coconut-milk"
+                                                    id="coconut"
                                                 />
-                                                <label for="coconut milk"
-                                                    >Coconut Milk</label
-                                                >
+	                                            </label>
                                             </form>
                                         </li>
                                     </ul>
@@ -241,73 +283,105 @@
                                             <form
                                                 name="sweetener"
                                                 data-sweetener="selection"
+                                                id="sweetener-sel"
+                                                class="d-flex"
                                             >
-                                                <input
-                                                    type="radio"
-                                                    name="sweetener"
-                                                    value="sugar"
-                                                />
-                                                <label for="sugar">Sugar</label>
+	                                            <label
+		                                            class="sweetener-label"
+		                                            for="sugar"
+		                                        >Sugar
+	                                                <input
+	                                                    type="radio"
+	                                                    name="sweetener"
+	                                                    value="sugar"
+	                                                    class="suger-sweetener"
+	                                                    id="sugar"
+	                                                />
+                                                </label>
                                             </form>
                                         </li>
                                         <li>
                                             <form
                                                 name="sweetener"
                                                 data-sweetener="selection"
+                                                id="sweetener-sel"
+                                                class="d-flex"
                                             >
-                                                <input
-                                                    type="radio"
-                                                    name="sweetener"
-                                                    value="hazelnut"
-                                                />
-                                                <label for="hazelnut"
-                                                    >Hazelnut</label
-                                                >
+	                                            <label
+		                                            class="sweetener-label"
+		                                            for="hazelnut"
+		                                        >Hazelnut
+	                                                <input
+	                                                    type="radio"
+	                                                    name="sweetener"
+	                                                    value="hazelnut"
+	                                                    class="hazelnut-sweetener"
+	                                                    id="hazelnut"
+	                                                />
+                                               </label>
                                             </form>
                                         </li>
                                         <li>
                                             <form
                                                 name="sweetener"
                                                 data-sweetener="selection"
+                                                id="sweetener-sel"
+                                                class="d-flex"
                                             >
+	                                            <label
+		                                            class="sweetener-label"
+		                                            for="vanilla"
+		                                        >Vanilla
                                                 <input
                                                     type="radio"
                                                     name="sweetener"
                                                     value="vanilla"
+                                                    class="vanilla-sweetener"
+                                                    id="vanilla"
                                                 />
-                                                <label for="vanilla"
-                                                    >Vanilla</label
-                                                >
+                                                </label>
                                             </form>
                                         </li>
                                         <li>
                                             <form
                                                 name="sweetener"
                                                 data-sweetener="selection"
+                                                id="sweetener-sel"
+                                                class="d-flex"
                                             >
-                                                <input
-                                                    type="radio"
-                                                    name="sweetener"
-                                                    value="coconut"
-                                                />
-                                                <label for="coconut"
-                                                    >Coconut</label
-                                                >
+	                                            <label
+		                                            class="sweetener-label"
+		                                            for="coco"
+		                                        >Coconut
+	                                                <input
+	                                                    type="radio"
+	                                                    name="sweetener"
+	                                                    value="coconut"
+	                                                    class="coco-sweetener"
+	                                                    id="coco"
+	                                                />
+                                                </label>
                                             </form>
                                         </li>
                                         <li>
                                             <form
                                                 name="sweetener"
                                                 data-sweetener="selection"
+                                                id="sweetener-sel"
+                                                class="d-flex"
                                             >
-                                                <input
-                                                    type="radio"
-                                                    name="sweetener"
-                                                    value="carmel"
-                                                />
-                                                <label for="caramel"
-                                                    >Caramel</label
-                                                >
+	                                            <label
+		                                            class="sweetener-label"
+		                                            for="caramel"
+		                                        >Carmel
+	                                                <input
+	                                                    type="radio"
+	                                                    name="sweetener"
+	                                                    value="caramel"
+	                                                    class="caramel-sweetener"
+	                                                    id="caramel"
+	                                                />
+                                                </label>
                                             </form>
                                         </li>
                                     </ul>
@@ -337,45 +411,63 @@
                                             <form
                                                 name="size"
                                                 data-size="selection"
+                                                id="size-sel"
+                                                class="d-flex"
                                             >
-                                                <input
-                                                    type="radio"
-                                                    name="size"
-                                                    value="small"
-                                                />
-                                                <label for="small"
-                                                    >Small 8oz</label
-                                                >
+	                                            <label
+		                                            class="size-label"
+		                                            for="small"
+		                                        >Small 8oz
+	                                                <input
+	                                                    type="radio"
+	                                                    name="size"
+	                                                    value="small"
+	                                                    class="small-size"
+	                                                    id="small"
+	                                                />
+                                                </label>
                                             </form>
                                         </li>
                                         <li>
                                             <form
                                                 name="size"
                                                 data-size="selection"
+                                                id="size-sel"
+                                                class="d-flex"
                                             >
+	                                            <label
+		                                            class="size-label"
+		                                            for="med"
+		                                        >Medium 12oz
                                                 <input
                                                     type="radio"
                                                     name="size"
                                                     value="medium"
+                                                    class="med-size"
+                                                    id="med"
                                                 />
-                                                <label for="medium"
-                                                    >Medium 12oz</label
-                                                >
+                                                </label>
                                             </form>
                                         </li>
                                         <li>
                                             <form
                                                 name="size"
                                                 data-size="selection"
+                                                id="size-sel"
+                                                class="d-flex"
                                             >
-                                                <input
-                                                    type="radio"
-                                                    name="size"
-                                                    value="large"
-                                                />
-                                                <label for="large"
-                                                    >Large 16oz</label
-                                                >
+	                                            <label
+		                                            class="size-label"
+		                                            for="large"
+		                                        >Large 16oz
+	                                                <input
+	                                                    type="radio"
+	                                                    name="size"
+	                                                    value="large"
+	                                                    class="large-size"
+	                                                    id="large"
+	                                                />
+                                                </label>
                                             </form>
                                         </li>
                                     </ul>
