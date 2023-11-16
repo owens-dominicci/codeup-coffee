@@ -26,43 +26,68 @@ const toggleList = () => {
 const options = {
     roast: ["light", "medium", "dark"],
     milk: ["whole", "2%", "skim", "almond", "oat", "soy"],
-    sweetener: ["sugar", "hazelnut", "coconut", "vanilla", "caramel"],
+    flavor: ["sugar", "hazelnut", "coconut", "vanilla", "caramel"],
     size: ["small", "medium", "large"],
 };
 
-// renderBox function
-// const renderAccordionItems = () => {
-//     for (let option in options) {
-//         const accordionSelection = document.createElement("div");
-//         accordionSelection.classList.add(`accordion ${option}`);
-//     }
-//     const boxContainer = document.querySelector("#roast-sel");
-//     boxContainer.appendChild(box);
-// };
+const populateSelect = () => {
+    const select = document.getElementById("keySelect");
 
-// Call renderBox when needed
-// For example, to add a box every time the page loads:
-// document.addEventListener("DOMContentLoaded", function () {
-//     renderBox();
-// });
+    for (let key in options) {
+        const option = document.createElement("option");
+        option.value = key;
+        option.textContent = key;
+        select.appendChild(option);
+    }
+};
+
+const addToOptions = () => {
+    const keyToAdd = document.getElementById("keySelect").value;
+    const valueToAdd = document.getElementById("valueInput").value;
+
+    if (valueToAdd.trim() !== "") {
+        if (options.hasOwnProperty(keyToAdd)) {
+            options[keyToAdd].push(valueToAdd);
+        } else {
+            options[keyToAdd] = [valueToAdd];
+        }
+
+        console.log(options); // Display the updated options object
+    } else {
+        alert("Please enter a value to add.");
+    }
+};
 
 const createCoffee = () => {};
 const renderCoffee = () => {};
 const updateCoffee = () => {};
-const selectCoffee = () => {
-    const roastOptions = document.querySelectorAll(
-        "form[data-roast='selection']"
+
+const saveSelections = () => {
+    const formData = new FormData(
+        document.querySelector('form[name="options"]')
     );
-    console.log(roastOptions);
-    roastOptions.forEach((roast) => {
-        const userSel = roast.querySelector("input[name='roast']");
-        userSel.addEventListener("change", (e) => {
-            console.log(e.target.value);
-        });
-    });
+    const userSelections = {};
+
+    // Loop through the FormData entries and build the object
+    for (let [key, value] of formData.entries()) {
+        // Set the selections as sections: values (e.g., roast: light)
+        userSelections[key] = value;
+    }
+
+    return userSelections;
 };
+
+// Add event listener to the button
+const saveButton = document.getElementById("saveButton");
+saveButton.addEventListener("click", (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    const selections = saveSelections();
+    console.log(selections); // Output the collected object with selected values
+    // You can further process or utilize selections as needed here
+});
 //MAIN
 (() => {
     toggleList();
-    selectCoffee();
+    populateSelect();
 })();
