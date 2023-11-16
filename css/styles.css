@@ -137,6 +137,20 @@ nav ul {
 .roast-label:nth-of-type(3) {
     background-image: url("/assets/img/coffee-dark.png");
 }
+.milk-label {
+    display: inline-block;
+    width: 100px; /* Set the size of your images */
+    height: 100px; /* Set the size of your images */
+    background-size: cover;
+    background-position: center;
+    margin-right: 10px; /* Adjust spacing between images */
+    color: white;
+}
+
+.milk-label:hover {
+    cursor: pointer;
+    border: 2px solid white;
+}
 
 /* Style when the radio button is checked */
 input[type="radio"]:checked + .roast-label {
