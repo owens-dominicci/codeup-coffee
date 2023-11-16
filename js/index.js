@@ -86,8 +86,13 @@ saveButton.addEventListener("click", (event) => {
     console.log(selections); // Output the collected object with selected values
     // You can further process or utilize selections as needed here
 });
+export const extractCoffeeProperties = (coffees) => {
+	return coffees.map(({ id, name, roastType }) => ({ id, name, roastType }));
+};
 //MAIN
 (() => {
+	const extractedCoffeeProperties = extractCoffeeProperties(coffees);
+	console.log(extractedCoffeeProperties);
     toggleList();
     populateSelect();
 })();
