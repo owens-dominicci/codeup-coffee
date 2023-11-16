@@ -36,8 +36,8 @@
                             Full menu
                         </button>
                     </div>
-	                <div class="box-container"></div>
-	                <div id="boxes"></div>
+                    <div class="box-container"></div>
+                    <div id="boxes"></div>
                     <div class="tab-content" data-content="create-coffee">
                         <div class="col lt-menu">
                             <!-- start Accordion -->
@@ -69,9 +69,8 @@
                                                 data-roast="selection"
                                             >
                                                 <input
-                                                    type="checkbox"
+                                                    type="radio"
                                                     name="roast"
-                                                    id="light"
                                                     value="light"
                                                 />
                                                 <label for="light">Light</label>
@@ -83,9 +82,8 @@
                                                 data-roast="selection"
                                             >
                                                 <input
-                                                    type="checkbox"
+                                                    type="radio"
                                                     name="roast"
-                                                    id="medium"
                                                     value="medium"
                                                 />
                                                 <label for="medium"
@@ -99,9 +97,8 @@
                                                 data-roast="selection"
                                             >
                                                 <input
-                                                    type="checkbox"
+                                                    type="radio"
                                                     name="roast"
-                                                    id="dark"
                                                     value="dark"
                                                 />
                                                 <label for="dark">Dark</label>
@@ -131,41 +128,53 @@
                                         class="accordion-content default"
                                     >
                                         <li>
-                                            <form action="">
+                                            <form
+                                                name="milk"
+                                                data-milk="selection"
+                                            >
                                                 <input
-                                                    type="checkbox"
-                                                    name="roast"
-                                                    id="whole"
+                                                    type="radio"
+                                                    name="milk"
+                                                    value="whole"
                                                 />
                                                 <label for="whole">Whole</label>
                                             </form>
                                         </li>
                                         <li>
-                                            <form action="">
+                                            <form
+                                                name="milk"
+                                                data-milk="selection"
+                                            >
                                                 <input
-                                                    type="checkbox"
-                                                    name="roast"
-                                                    id="2%"
+                                                    type="radio"
+                                                    name="milk"
+                                                    value="2%"
                                                 />
                                                 <label for="2%">2%</label>
                                             </form>
                                         </li>
                                         <li>
-                                            <form action="">
+                                            <form
+                                                name="roast"
+                                                data-milk="selection"
+                                            >
                                                 <input
-                                                    type="checkbox"
-                                                    name="roast"
-                                                    id="skim"
+                                                    type="radio"
+                                                    name="milk"
+                                                    value="skim"
                                                 />
                                                 <label for="skim">Skim</label>
                                             </form>
                                         </li>
                                         <li>
-                                            <form action="">
+                                            <form
+                                                name="milk"
+                                                data-milk="selection"
+                                            >
                                                 <input
-                                                    type="checkbox"
-                                                    name="roast"
-                                                    id="almond milk"
+                                                    type="radio"
+                                                    name="milk"
+                                                    value="almond"
                                                 />
                                                 <label for="almond milk"
                                                     >Almond Milk</label
@@ -173,11 +182,14 @@
                                             </form>
                                         </li>
                                         <li>
-                                            <form action="">
+                                            <form
+                                                name="milk"
+                                                data-milk="selection"
+                                            >
                                                 <input
-                                                    type="checkbox"
-                                                    name="roast"
-                                                    id="oat milk"
+                                                    type="radio"
+                                                    name="milk"
+                                                    value="oat"
                                                 />
                                                 <label for="oat milk"
                                                     >Oat Milk</label
@@ -185,11 +197,14 @@
                                             </form>
                                         </li>
                                         <li>
-                                            <form action="">
+                                            <form
+                                                name="milk"
+                                                data-milk="selection"
+                                            >
                                                 <input
-                                                    type="checkbox"
-                                                    name="roast"
-                                                    id="coconut milk"
+                                                    type="radio"
+                                                    name="milk"
+                                                    value="coconut"
                                                 />
                                                 <label for="coconut milk"
                                                     >Coconut Milk</label
@@ -220,21 +235,27 @@
                                         class="accordion-content default"
                                     >
                                         <li>
-                                            <form action="">
+                                            <form
+                                                name="sweetener"
+                                                data-sweetener="selection"
+                                            >
                                                 <input
-                                                    type="checkbox"
-                                                    name="roast"
-                                                    id="sugar"
+                                                    type="radio"
+                                                    name="sweetener"
+                                                    value="sugar"
                                                 />
                                                 <label for="sugar">Sugar</label>
                                             </form>
                                         </li>
                                         <li>
-                                            <form action="">
+                                            <form
+                                                name="sweetener"
+                                                data-sweetener="selection"
+                                            >
                                                 <input
-                                                    type="checkbox"
-                                                    name="roast"
-                                                    id="hazelnut"
+                                                    type="radio"
+                                                    name="sweetener"
+                                                    value="hazelnut"
                                                 />
                                                 <label for="hazelnut"
                                                     >Hazelnut</label
@@ -242,11 +263,14 @@
                                             </form>
                                         </li>
                                         <li>
-                                            <form action="">
+                                            <form
+                                                name="sweetener"
+                                                data-sweetener="selection"
+                                            >
                                                 <input
-                                                    type="checkbox"
-                                                    name="roast"
-                                                    id="vanilla"
+                                                    type="radio"
+                                                    name="sweetener"
+                                                    value="vanilla"
                                                 />
                                                 <label for="vanilla"
                                                     >Vanilla</label
@@ -254,11 +278,14 @@
                                             </form>
                                         </li>
                                         <li>
-                                            <form action="">
+                                            <form
+                                                name="sweetener"
+                                                data-sweetener="selection"
+                                            >
                                                 <input
-                                                    type="checkbox"
-                                                    name="roast"
-                                                    id="coconut"
+                                                    type="radio"
+                                                    name="sweetener"
+                                                    value="coconut"
                                                 />
                                                 <label for="coconut"
                                                     >Coconut</label
@@ -266,11 +293,14 @@
                                             </form>
                                         </li>
                                         <li>
-                                            <form action="">
+                                            <form
+                                                name="sweetener"
+                                                data-sweetener="selection"
+                                            >
                                                 <input
-                                                    type="checkbox"
-                                                    name="roast"
-                                                    id="caramel"
+                                                    type="radio"
+                                                    name="sweetener"
+                                                    value="carmel"
                                                 />
                                                 <label for="caramel"
                                                     >Caramel</label
@@ -301,11 +331,14 @@
                                         class="accordion-content default"
                                     >
                                         <li>
-                                            <form action="">
+                                            <form
+                                                name="size"
+                                                data-size="selection"
+                                            >
                                                 <input
-                                                    type="checkbox"
-                                                    name="roast"
-                                                    id="small"
+                                                    type="radio"
+                                                    name="size"
+                                                    value="small"
                                                 />
                                                 <label for="small"
                                                     >Small 8oz</label
@@ -313,11 +346,14 @@
                                             </form>
                                         </li>
                                         <li>
-                                            <form action="">
+                                            <form
+                                                name="size"
+                                                data-size="selection"
+                                            >
                                                 <input
-                                                    type="checkbox"
-                                                    name="roast"
-                                                    id="medium"
+                                                    type="radio"
+                                                    name="size"
+                                                    value="medium"
                                                 />
                                                 <label for="medium"
                                                     >Medium 12oz</label
@@ -325,11 +361,14 @@
                                             </form>
                                         </li>
                                         <li>
-                                            <form action="">
+                                            <form
+                                                name="size"
+                                                data-size="selection"
+                                            >
                                                 <input
-                                                    type="checkbox"
-                                                    name="roast"
-                                                    id="large"
+                                                    type="radio"
+                                                    name="size"
+                                                    value="large"
                                                 />
                                                 <label for="large"
                                                     >Large 16oz</label
