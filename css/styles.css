@@ -86,19 +86,13 @@ nav ul {
 .accordion {
     list-style: none;
     padding: 0;
-    width: 200px;
+    width: 100%;
     margin: 0 auto;
 }
 
 .accordion li {
-    background-color: #f4f4f4;
     padding: 10px;
     margin-bottom: 5px;
-    cursor: pointer;
-}
-
-.accordion li:hover {
-    background-color: #ddd;
 }
 
 .accordion-content {
@@ -127,6 +121,11 @@ nav ul {
     background-position: center;
     margin-right: 10px; /* Adjust spacing between images */
     color: white;
+}
+
+.roast-label:hover {
+    cursor: pointer;
+    border: 2px solid white;
 }
 
 .roast-label:nth-of-type(1) {

@@ -22,19 +22,29 @@ const toggleList = () => {
         });
     });
 };
-// renderBox function
-const renderBox = () => {
-    const box = document.createElement("div");
-    box.classList.add("box");
-    const boxContainer = document.querySelector("#boxes");
-    boxContainer.appendChild(box);
+
+const options = {
+    roast: ["light", "medium", "dark"],
+    milk: ["whole", "2%", "skim", "almond", "oat", "soy"],
+    sweetener: ["sugar", "hazelnut", "coconut", "vanilla", "caramel"],
+    size: ["small", "medium", "large"],
 };
+
+// renderBox function
+// const renderAccordionItems = () => {
+//     for (let option in options) {
+//         const accordionSelection = document.createElement("div");
+//         accordionSelection.classList.add(`accordion ${option}`);
+//     }
+//     const boxContainer = document.querySelector("#roast-sel");
+//     boxContainer.appendChild(box);
+// };
 
 // Call renderBox when needed
 // For example, to add a box every time the page loads:
-document.addEventListener("DOMContentLoaded", function () {
-    renderBox();
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//     renderBox();
+// });
 
 const createCoffee = () => {};
 const renderCoffee = () => {};
@@ -54,6 +64,5 @@ const selectCoffee = () => {
 //MAIN
 (() => {
     toggleList();
-
     selectCoffee();
 })();
