@@ -1,19 +1,90 @@
 const coffees = [
-	{ id: 1, name: "Espresso", roastType: "Dark" },
-	{ id: 2, name: "Americano", roastType: "Medium" },
-	{ id: 3, name: "Cappuccino", roastType: "Medium" },
-	{ id: 4, name: "Latte", roastType: "Light" },
-	{ id: 5, name: "Mocha", roastType: "Dark" },
-	{ id: 6, name: "Macchiato", roastType: "Medium" },
-	{ id: 7, name: "Flat White", roastType: "Light" },
-	{ id: 8, name: "Affogato", roastType: "Dark" },
-	{ id: 9, name: "Irish Coffee", roastType: "Dark" },
-	{ id: 10, name: "Turkish Coffee", roastType: "Dark" },
-	{ id: 11, name: "Pour Over", roastType: "Light" },
-	{ id: 12, name: "French Press", roastType: "Medium" },
-	{ id: 13, name: "Vietnamese Iced Coffee", roastType: "Dark" },
-	{ id: 14, name: "Cold Brew", roastType: "Dark" },
+    {
+        id: 1,
+        name: "Espresso",
+        roastType: "Dark",
+        image: "../assets/img/espresso.jpg",
+    },
+    {
+        id: 2,
+        name: "Americano",
+        roastType: "Medium",
+        image: "../assets/img/americano.jpg",
+    },
+    {
+        id: 3,
+        name: "Cappuccino",
+        roastType: "Medium",
+        image: "../assets/img/cappucino.jpg",
+    },
+    {
+        id: 4,
+        name: "Latte",
+        roastType: "Light",
+        image: "../assets/img/latte.jpg",
+    },
+    {
+        id: 5,
+        name: "Mocha",
+        roastType: "Dark",
+        image: "../assets/img/mocha.jpg",
+    },
+    {
+        id: 6,
+        name: "Macchiato",
+        roastType: "Medium",
+        image: "../assets/img/machiato.jpg",
+    },
+    {
+        id: 7,
+        name: "Flat White",
+        roastType: "Light",
+        image: "../assets/img/flat-white.jpg",
+    },
+    {
+        id: 8,
+        name: "Affogato",
+        roastType: "Dark",
+        image: "../assets/img/affogato.jpg",
+    },
+    {
+        id: 9,
+        name: "Irish Coffee",
+        roastType: "Dark",
+        image: "../assets/img/irish-coffee.jpg",
+    },
+    {
+        id: 10,
+        name: "Turkish Coffee",
+        roastType: "Dark",
+        image: "../assets/img/turkish.jpg",
+    },
+    {
+        id: 11,
+        name: "Pour Over",
+        roastType: "Light",
+        image: "../assets/img/pour-over.jpg",
+    },
+    {
+        id: 12,
+        name: "French Press",
+        roastType: "Medium",
+        image: "../assets/img/french-press.jpg",
+    },
+    {
+        id: 13,
+        name: "Vietnamese Iced Coffee",
+        roastType: "Dark",
+        image: "../assets/img/vietnamese.jpg",
+    },
+    {
+        id: 14,
+        name: "Cold Brew",
+        roastType: "Dark",
+        image: "../assets/img/cold-brew.jpg",
+    },
 ];
+
 const toggleList = () => {
     const accordionDivs = document.querySelectorAll(".accordion");
 
@@ -24,7 +95,7 @@ const toggleList = () => {
         const addBtn = div.querySelector(".add-btn");
 
         removeBtn.classList.add("hidden");
-        addBtn.classList.add("display");
+        addBtn.classList.add("default");
         accordionItem.classList.add("default"); // Initially hide all accordion items
 
         accordionBtn.addEventListener("click", (e) => {
@@ -46,37 +117,99 @@ const options = {
     size: ["small", "medium", "large"],
 };
 
-const populateSelect = () => {
-    const select = document.getElementById("keySelect");
+// const populateSelect = () => {
+//     const select = document.getElementById("keySelect");
 
-    for (let key in options) {
-        const option = document.createElement("option");
-        option.value = key;
-        option.textContent = key;
-        select.appendChild(option);
-    }
+//     for (let key in options) {
+//         const option = document.createElement("option");
+//         option.value = key;
+//         option.textContent = key;
+//         select.appendChild(option);
+//     }
+// };
+
+// const addToOptions = () => {
+//     const keyToAdd = document.getElementById("keySelect").value;
+//     const valueToAdd = document.getElementById("valueInput").value;
+
+//     if (valueToAdd.trim() !== "") {
+//         if (options.hasOwnProperty(keyToAdd)) {
+//             options[keyToAdd].push(valueToAdd);
+//         } else {
+//             options[keyToAdd] = [valueToAdd];
+//         }
+
+//         console.log(options); // Display the updated options object
+//     } else {
+//         alert("Please enter a value to add.");
+//     }
+// };
+const createCoffee = (coffees) => {
+    const { id, name, roastType, image } = coffees;
+    const coffeeCard = document.createElement("div");
+    coffeeCard.classList.add("card");
+    coffeeCard.style.backgroundImage = `${image}`;
+    coffeeCard.innerHTML = `
+            <div class="card-body" id="${id}"></div>
+            <div class="card-footer">
+            <h2>${name}</h2>
+            <p>${roastType}</p>
+        </div>
+        `;
+    return coffeeCard;
 };
 
-const addToOptions = () => {
-    const keyToAdd = document.getElementById("keySelect").value;
-    const valueToAdd = document.getElementById("valueInput").value;
+const updateCoffee = (coffees) => {
+    const roastValue = document.querySelector("#menu").value;
+    const searchValue = document.querySelector("input[type='search']").value;
 
-    if (valueToAdd.trim() !== "") {
-        if (options.hasOwnProperty(keyToAdd)) {
-            options[keyToAdd].push(valueToAdd);
-        } else {
-            options[keyToAdd] = [valueToAdd];
+    let filteredCoffees = coffees;
+
+    filteredCoffees = filteredCoffees.filter((coffee) => {
+        if (!roastValue) {
+            return true;
         }
+        if (typeof coffee.roastType !== "string") {
+            return false;
+        }
+        return coffee.roastType
+            .toLowerCase()
+            .includes(roastValue.toLowerCase());
+    });
 
-        console.log(options); // Display the updated options object
-    } else {
-        alert("Please enter a value to add.");
+    filteredCoffees = filteredCoffees.filter((coffee) => {
+        if (!searchValue) {
+            return true;
+        }
+        if (typeof coffee.name !== "string") {
+            return false;
+        }
+        return coffee.name.toLowerCase().includes(searchValue.toLowerCase());
+    });
+
+    const coffeeFragment = document.createDocumentFragment();
+
+    for (let coffee of filteredCoffees) {
+        coffeeFragment.appendChild(createCoffee(coffee));
     }
+    const parent = document
+        .querySelector(".card-container")
+        .appendChild(coffeeFragment);
 };
 
-const createCoffee = () => {};
-const renderCoffee = () => {};
-const updateCoffee = () => {};
+const handleFilter = (coffees) => {
+    const searchInput = document.querySelector("input[type='search']");
+    const selectInput = document.querySelector("select");
+
+    const updateCoffeeList = () => {
+        const searchValue = searchInput.value;
+        const selectValue = selectInput.value;
+        updateCoffee(coffees, searchValue, selectValue);
+    };
+
+    searchInput.addEventListener("input", updateCoffeeList);
+    selectInput.addEventListener("change", updateCoffeeList);
+};
 
 const saveSelections = () => {
     const formData = new FormData(
@@ -102,60 +235,61 @@ saveButton.addEventListener("click", (event) => {
     console.log(selections); // Output the collected object with selected values
     // You can further process or utilize selections as needed here
 });
-const extractCoffeeProperties = (coffees) => {
-	return coffees.map(({ id, name, roastType }) => ({ id, name, roastType }));
+
+const userSelections = (selectedValue) => {
+    const radioInputs = document.querySelectorAll('input[type="radio"]');
+    const selectList = document.querySelector(".display-selection-wrapper ul");
+
+    radioInputs.forEach((radio) => {
+        radio.addEventListener("change", (event) => {
+            const selectedValue = event.target.value;
+            const names = event.target.getAttribute("name");
+
+            let existingListItem = Array.from(selectList.children).find(
+                (li) => li.dataset.name === names
+            );
+            if (!existingListItem) {
+                existingListItem = document.createElement("li");
+                existingListItem.classList.add("selection");
+                existingListItem.dataset.name = names;
+                selectList.appendChild(existingListItem);
+            }
+
+            const listItem = document.createElement("p");
+            if (names === "roast") {
+                listItem.textContent = `Selected Roast: ${selectedValue}`;
+            } else if (names === "milk") {
+                listItem.textContent = `Selected Milk: ${selectedValue}`;
+            } else if (names === "flavor") {
+                listItem.textContent = `Selected Flavor: ${selectedValue}`;
+            } else if (names === "size") {
+                listItem.textContent = `Selected Size: ${selectedValue}`;
+            }
+
+            // Clear the existing content before adding new content
+            while (existingListItem.firstChild) {
+                existingListItem.removeChild(existingListItem.firstChild);
+            }
+
+            existingListItem.appendChild(listItem);
+        });
+    });
 };
-const createCoffeeCards = (coffees) => {
-	const coffeeContainer = document.querySelector("#coffee-container");
 
-	coffees.forEach((coffee) => {
-		const card = document.createElement("div");
-		card.classList.add("coffee-card");
+const radios = document.querySelectorAll(".radio-option");
 
-		// Adding background image based on roastType (You can replace this with your own logic)
-		const backgroundImage = getBackgroundImage(coffee.roastType);
-		card.style.backgroundImage = `url('${backgroundImage}')`;
-
-		const content = document.createElement("div");
-		content.classList.add("coffee-content");
-
-		const nameElement = document.createElement("h2");
-		nameElement.textContent = coffee.name;
-
-		const roastTypeElement = document.createElement("p");
-		roastTypeElement.textContent = `Roast Type: ${coffee.roastType}`;
-
-		content.appendChild(nameElement);
-		content.appendChild(roastTypeElement);
-
-		card.appendChild(content);
-		coffeeContainer.appendChild(card);
-	});
-};
-
-// Replace this function with your logic to get background image based on roastType
-const getBackgroundImage = (roastType) => {
-	// Replace this mapping with actual image URLs based on roastType
-	const backgroundImageMap = {
-		Light: "light-roast-image.jpg",
-		Medium: "medium-roast-image.jpg",
-		Dark: "dark-roast-image.jpg",
-	};
-
-	return backgroundImageMap[roastType] || "default-image.jpg";
-};
-const renderBox = () => {
-	const box = document.createElement("div");
-	box.classList.add("box");
-	const boxContainer = document.querySelector("#boxes");
-	boxContainer.appendChild(box);
+radios.forEach((radio) => {
+    radio.addEventListener("change", (e) => {
+        if (radio.checked) {
+            userSelections(radio.value);
+            console.log(radio.value);
+        }
+    });
+});
 
 //MAIN
 (() => {
-	const extractedCoffeeProperties = extractCoffeeProperties(coffees);
-	console.log(extractedCoffeeProperties);
-	createCoffeeCards(extractedCoffeeProperties);
-	renderBox();
     toggleList();
-    populateSelect();
+    updateCoffee(coffees);
+    handleFilter(coffees);
 })();

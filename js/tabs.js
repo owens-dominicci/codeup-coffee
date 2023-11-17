@@ -1,4 +1,4 @@
-const openTab = (tabId = "create-coffee") => {
+const openTab = (tabId = "show-coffee") => {
     //get the tablinks
     const tabLinks = document.querySelectorAll(".tablink");
     //looping through the tablinks to get the ID and add the active class to the tablink
