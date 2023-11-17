@@ -117,33 +117,6 @@ const options = {
     size: ["small", "medium", "large"],
 };
 
-// const populateSelect = () => {
-//     const select = document.getElementById("keySelect");
-
-//     for (let key in options) {
-//         const option = document.createElement("option");
-//         option.value = key;
-//         option.textContent = key;
-//         select.appendChild(option);
-//     }
-// };
-
-// const addToOptions = () => {
-//     const keyToAdd = document.getElementById("keySelect").value;
-//     const valueToAdd = document.getElementById("valueInput").value;
-
-//     if (valueToAdd.trim() !== "") {
-//         if (options.hasOwnProperty(keyToAdd)) {
-//             options[keyToAdd].push(valueToAdd);
-//         } else {
-//             options[keyToAdd] = [valueToAdd];
-//         }
-
-//         console.log(options); // Display the updated options object
-//     } else {
-//         alert("Please enter a value to add.");
-//     }
-// };
 const createCoffee = (coffees) => {
     const { id, name, roastType, image } = coffees;
     const coffeeCard = document.createElement("div");
@@ -165,12 +138,8 @@ const updateCoffee = (coffees) => {
     const searchValue = document.querySelector("input[type='search']").value;
 
     let filteredCoffees = coffees.filter((coffee) => {
-        if (!roastValue && !searchValue) {
-            return true;
-        }
-
         const matchesRoast =
-            !roastValue ||
+            roastValue === "all" ||
             coffee.roastType.toLowerCase().includes(roastValue.toLowerCase());
         const matchesSearch =
             !searchValue ||
@@ -217,7 +186,7 @@ const handleFilter = (coffees) => {
         updateCoffee(coffees);
     });
 
-    updateCoffee(coffees); // To initially render all coffees
+    updateCoffee(coffees);
 };
 
 const saveSelections = () => {
@@ -235,54 +204,63 @@ const saveSelections = () => {
     return userSelections;
 };
 
-// Add event listener to the button
 const saveButton = document.getElementById("saveButton");
 saveButton.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault();
 
     const selections = saveSelections();
-    console.log(selections); // Output the collected object with selected values
-    // You can further process or utilize selections as needed here
+    console.log(selections);
 });
 
 const userSelections = (selectedValue) => {
     const radioInputs = document.querySelectorAll('input[type="radio"]');
     const selectList = document.querySelector(".display-selection-wrapper ul");
+    const inputName = document.querySelector("#name-coffee");
 
     radioInputs.forEach((radio) => {
         radio.addEventListener("change", (event) => {
-            const selectedValue = event.target.value;
-            const names = event.target.getAttribute("name");
-
-            let existingListItem = Array.from(selectList.children).find(
-                (li) => li.dataset.name === names
+            updateListItem(
+                event.target.getAttribute("name"),
+                event.target.value
             );
-            if (!existingListItem) {
-                existingListItem = document.createElement("li");
-                existingListItem.classList.add("selection");
-                existingListItem.dataset.name = names;
-                selectList.appendChild(existingListItem);
-            }
-
-            const listItem = document.createElement("p");
-            if (names === "roast") {
-                listItem.textContent = `Selected Roast: ${selectedValue}`;
-            } else if (names === "milk") {
-                listItem.textContent = `Selected Milk: ${selectedValue}`;
-            } else if (names === "flavor") {
-                listItem.textContent = `Selected Flavor: ${selectedValue}`;
-            } else if (names === "size") {
-                listItem.textContent = `Selected Size: ${selectedValue}`;
-            }
-
-            // Clear the existing content before adding new content
-            while (existingListItem.firstChild) {
-                existingListItem.removeChild(existingListItem.firstChild);
-            }
-
-            existingListItem.appendChild(listItem);
         });
     });
+
+    inputName.addEventListener("input", (event) => {
+        updateListItem("name", event.target.value);
+    });
+
+    function updateListItem(name, value) {
+        let existingListItem = Array.from(selectList.children).find(
+            (li) => li.dataset.name === name
+        );
+        if (!existingListItem) {
+            existingListItem = document.createElement("li");
+            existingListItem.classList.add("selection");
+            existingListItem.dataset.name = name;
+            selectList.appendChild(existingListItem);
+        }
+
+        const listItem = document.createElement("p");
+        if (name === "roast") {
+            listItem.textContent = `Selected Roast: ${value}`;
+        } else if (name === "milk") {
+            listItem.textContent = `Selected Milk: ${value}`;
+        } else if (name === "flavor") {
+            listItem.textContent = `Selected Flavor: ${value}`;
+        } else if (name === "size") {
+            listItem.textContent = `Selected Size: ${value}`;
+        } else if (name === "name") {
+            listItem.textContent = `Name: ${value}`;
+        }
+
+        // Clear the existing content before adding new content
+        while (existingListItem.firstChild) {
+            existingListItem.removeChild(existingListItem.firstChild);
+        }
+
+        existingListItem.appendChild(listItem);
+    }
 };
 
 const radios = document.querySelectorAll(".radio-option");

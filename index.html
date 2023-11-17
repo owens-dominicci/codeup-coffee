@@ -356,7 +356,15 @@
                                     </ul>
                                 </div>
                                 <!-- end size section -->
-                                <button id="saveButton">submit</button>
+                                <div
+                                    class="d-flex flex-column justify-conetent-start align-items-start"
+                                >
+                                    <label for="name-coffee" class="coffee-name"
+                                        >Name your coffee
+                                    </label>
+                                    <input type="text" id="name-coffee" />
+                                    <button id="saveButton">submit</button>
+                                </div>
                             </form>
                             <!-- end Accordion -->
                             <!-- create coffee -->
@@ -384,6 +392,7 @@
                                         Choose roast type:
                                     </label>
                                     <select name="inventory" id="menu">
+                                        <option value="all">All</option>
                                         <option value="light">Light</option>
                                         <option value="medium">Medium</option>
                                         <option value="dark">Dark</option>

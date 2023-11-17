@@ -2,6 +2,16 @@
 /* Styles */
 
 /* Base */
+#saveButton {
+    width: 100%;
+}
+#name-coffee {
+    width: 100%;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid #e6d5b8;
+    padding-left: 10px;
+}
 
 body {
     padding: 0 50px;
