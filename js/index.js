@@ -161,6 +161,7 @@ const updateCoffee = (coffees) => {
 
     coffeeContainer.appendChild(coffeeFragment);
 };
+
 const debounce = (func, delay) => {
     let timeoutId;
     return (...args) => {
@@ -216,14 +217,6 @@ const saveSelections = () => {
 
     return userSelections;
 };
-
-const saveButton = document.getElementById("saveButton");
-saveButton.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    const selections = saveSelections();
-    console.log(selections);
-});
 
 const userSelections = (selectedValue) => {
     const radioInputs = document.querySelectorAll('input[type="radio"]');
@@ -282,19 +275,26 @@ const userSelections = (selectedValue) => {
     };
 };
 
-const radios = document.querySelectorAll(".radio-option");
-
-radios.forEach((radio) => {
-    radio.addEventListener("change", (e) => {
-        if (radio.checked) {
-            userSelections(radio.value);
-            console.log(radio.value);
-        }
-    });
-});
-
 //MAIN
 (() => {
+    const radios = document.querySelectorAll(".radio-option");
+
+    radios.forEach((radio) => {
+        radio.addEventListener("change", (e) => {
+            if (radio.checked) {
+                userSelections(radio.value);
+                console.log(radio.value);
+            }
+        });
+    });
+
+    const saveButton = document.getElementById("saveButton");
+    saveButton.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const selections = saveSelections();
+        console.log(selections);
+    });
     toggleList();
     updateCoffee(coffees);
     handleFilter(coffees);
