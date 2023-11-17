@@ -96,10 +96,10 @@ const toggleList = () => {
 
         removeBtn.classList.add("hidden");
         addBtn.classList.add("default");
-        accordionItem.classList.add("default"); // Initially hide all accordion items
+        accordionItem.classList.add("default");
 
         accordionBtn.addEventListener("click", (e) => {
-            e.stopPropagation(); // Prevent unnecessary event bubbling
+            e.stopPropagation();
 
             accordionItem.classList.toggle("default");
             accordionItem.classList.toggle("display");
@@ -241,7 +241,7 @@ const userSelections = (selectedValue) => {
         updateListItem("name", event.target.value);
     });
 
-    function updateListItem(name, value) {
+    const updateListItem = (name, value) => {
         let existingListItem = Array.from(selectList.children).find(
             (li) => li.dataset.name === name
         );
@@ -253,7 +253,7 @@ const userSelections = (selectedValue) => {
         }
 
         const listItem = document.createElement("p");
-        if (name === "roast") {
+        if (name === "roastType") {
             listItem.textContent = `Selected Roast: ${value}`;
         } else if (name === "milk") {
             listItem.textContent = `Selected Milk: ${value}`;
@@ -271,7 +271,7 @@ const userSelections = (selectedValue) => {
         }
 
         existingListItem.appendChild(listItem);
-    }
+    };
 };
 
 const radios = document.querySelectorAll(".radio-option");
