@@ -45,13 +45,13 @@ const coffees = [
         id: 8,
         name: "Affogato",
         roastType: "Dark",
-        image: "../assets/img/affogato.jpg",
+        image: "../assets/img/affogat.jpg",
     },
     {
         id: 9,
         name: "Irish Coffee",
         roastType: "Dark",
-        image: "../assets/img/irish-coffee.jpg",
+        image: "../assets/img/irish.jpg",
     },
     {
         id: 10,
@@ -147,8 +147,9 @@ const options = {
 const createCoffee = (coffees) => {
     const { id, name, roastType, image } = coffees;
     const coffeeCard = document.createElement("div");
+
     coffeeCard.classList.add("card");
-    coffeeCard.style.backgroundImage = `${image}`;
+    coffeeCard.style.backgroundImage = `url(${image})`;
     coffeeCard.innerHTML = `
             <div class="card-body" id="${id}"></div>
             <div class="card-footer">
@@ -163,52 +164,60 @@ const updateCoffee = (coffees) => {
     const roastValue = document.querySelector("#menu").value;
     const searchValue = document.querySelector("input[type='search']").value;
 
-    let filteredCoffees = coffees;
-
-    filteredCoffees = filteredCoffees.filter((coffee) => {
-        if (!roastValue) {
+    let filteredCoffees = coffees.filter((coffee) => {
+        if (!roastValue && !searchValue) {
             return true;
         }
-        if (typeof coffee.roastType !== "string") {
-            return false;
-        }
-        return coffee.roastType
-            .toLowerCase()
-            .includes(roastValue.toLowerCase());
+
+        const matchesRoast =
+            !roastValue ||
+            coffee.roastType.toLowerCase().includes(roastValue.toLowerCase());
+        const matchesSearch =
+            !searchValue ||
+            coffee.name.toLowerCase().includes(searchValue.toLowerCase());
+
+        return matchesRoast && matchesSearch;
     });
 
-    filteredCoffees = filteredCoffees.filter((coffee) => {
-        if (!searchValue) {
-            return true;
-        }
-        if (typeof coffee.name !== "string") {
-            return false;
-        }
-        return coffee.name.toLowerCase().includes(searchValue.toLowerCase());
-    });
+    const coffeeContainer = document.querySelector(".card-container");
+    coffeeContainer.innerHTML = ""; // Clear previous content
 
     const coffeeFragment = document.createDocumentFragment();
 
     for (let coffee of filteredCoffees) {
         coffeeFragment.appendChild(createCoffee(coffee));
     }
-    const parent = document
-        .querySelector(".card-container")
-        .appendChild(coffeeFragment);
+
+    coffeeContainer.appendChild(coffeeFragment);
+};
+const debounce = (func, delay) => {
+    let timeoutId;
+    return (...args) => {
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+        timeoutId = setTimeout(() => {
+            func.apply(null, args);
+        }, delay);
+    };
 };
 
 const handleFilter = (coffees) => {
     const searchInput = document.querySelector("input[type='search']");
     const selectInput = document.querySelector("select");
 
-    const updateCoffeeList = () => {
-        const searchValue = searchInput.value;
-        const selectValue = selectInput.value;
-        updateCoffee(coffees, searchValue, selectValue);
-    };
+    searchInput.addEventListener(
+        "input",
+        debounce(() => {
+            updateCoffee(coffees);
+        }, 500)
+    );
 
-    searchInput.addEventListener("input", updateCoffeeList);
-    selectInput.addEventListener("change", updateCoffeeList);
+    selectInput.addEventListener("change", () => {
+        updateCoffee(coffees);
+    });
+
+    updateCoffee(coffees); // To initially render all coffees
 };
 
 const saveSelections = () => {

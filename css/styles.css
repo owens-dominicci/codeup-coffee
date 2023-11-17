@@ -17,6 +17,7 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    padding: unset;
 }
 
 button {
@@ -41,7 +42,7 @@ input[type="radio"] {
 }
 
 .active {
-    border: 1px solid rgb(128, 128, 128);
+    background-color: #f4f3ee;
     display: flex;
 }
 
@@ -65,6 +66,15 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 18px;
+    margin-bottom: 18px;
+
+    & h1 {
+        margin: unset;
+    }
+    & ul {
+        margin: unset;
+    }
 }
 
 .tab {
@@ -259,17 +269,21 @@ input[type="radio"]:checked + .size-label {
     margin-left: 12px;
     width: 250px;
     height: 250px;
+    background-size: cover;
+    background-position: center;
     border-radius: 12px;
+    color: white;
 }
 .card-body {
     height: 100px;
-    background-size: cover;
-    background-position: center;
     border-radius: 12px 12px 0 0;
-    color: white;
     display: flex;
     justify-content: end;
     align-items: end;
+}
+
+.card-footer {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .menu-header {
@@ -279,4 +293,11 @@ input[type="radio"]:checked + .size-label {
 
 .card-container {
     flex-wrap: wrap;
+}
+
+select {
+    height: 30px;
+}
+input[type="search"] {
+    height: 30px;
 }
