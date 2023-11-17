@@ -122,7 +122,9 @@ const createCoffee = (coffees) => {
     const coffeeCard = document.createElement("div");
 
     coffeeCard.classList.add("card");
-    coffeeCard.style.backgroundImage = `url(${image})`;
+    coffeeCard.style.backgroundImage = `url(${
+        image || "../assets/img/deafult.jpg"
+    }  )`;
     coffeeCard.innerHTML = `
             <div class="card-body" id="${id}"></div>
             <div class="card-footer">
@@ -195,11 +197,20 @@ const saveSelections = () => {
     );
     const userSelections = {};
 
-    // Loop through the FormData entries and build the object
     for (let [key, value] of formData.entries()) {
-        // Set the selections as sections: values (e.g., roast: light)
         userSelections[key] = value;
     }
+    const newId =
+        coffees.reduce((maxId, coffee) => {
+            return coffee.id > maxId ? coffee.id : maxId;
+        }, 0) + 1;
+    userSelections.id = newId;
+
+    coffees.push(userSelections);
+    console.log("New Coffee added:", userSelections);
+    console.log("Updated coffees:", coffees);
+
+    updateCoffee(coffees);
 
     return userSelections;
 };
