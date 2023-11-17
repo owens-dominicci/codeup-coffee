@@ -209,8 +209,10 @@ const saveSelections = () => {
     coffees.push(userSelections);
     console.log("New Coffee added:", userSelections);
     console.log("Updated coffees:", coffees);
+    alert("Your coffee has been added to the menu!");
 
     updateCoffee(coffees);
+    document.querySelector("form[name=options]").reset();
 
     return userSelections;
 };
@@ -271,6 +273,12 @@ const userSelections = (selectedValue) => {
         }
 
         existingListItem.appendChild(listItem);
+
+        const btn = document.querySelector("#saveButton");
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            existingListItem.remove();
+        });
     };
 };
 
